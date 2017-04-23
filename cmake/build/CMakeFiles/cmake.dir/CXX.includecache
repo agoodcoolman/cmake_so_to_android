@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jin/ClionProjects/cmake/lib/hello.cpp
+hello.h
+/home/jin/ClionProjects/cmake/lib/hello.h
+
+/home/jin/ClionProjects/cmake/lib/hello.h
+
