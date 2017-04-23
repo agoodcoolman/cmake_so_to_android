@@ -1,0 +1,242 @@
+[root@localhost build]# cmake -DCMAKE_TOOLCHAIN_FILE=../android.toolchain.cmake -DANDROID_NDK=/mnt/software/adt-bundle-linux-x86_64-20140702/sdk/ndk-bundle -DCMAKE_BUILD_TYPE=Release -DANDROID_ABI="armeabi-v7a with NEON" ../lib && cmake --build .
+CMake Error: The current CMakeCache.txt directory /root/桌面/test/build/CMakeCache.txt is different than the directory /home/jin/桌面/test/build where CMakeCache.txt was created. This may result in binaries being created in the wrong place. If you are not sure, reedit the CMakeCache.txt
+CMake Error: The source "/root/桌面/test/lib/CMakeLists.txt" does not match the source "/home/jin/桌面/test/lib/CMakeLists.txt" used to generate cache.  Re-run cmake with a different source directory.
+[root@localhost build]# cmake -DCMAKE_TOOLCHAIN_FILE=../android.toolchain.cmake -DANDROID_NDK=/mnt/software/adt-bundle-linux-x86_64-20140702/sdk/ndk-bundle -DCMAKE_BUILD_TYPE=Release -DANDROID_ABI="armeabi-v7a with NEON" ../lib && cmake --build .
+-- Android: Targeting API '9' with architecture 'arm', ABI 'armeabi-v7a', and processor 'armv7-a'
+-- Android: Selected GCC toolchain 'arm-linux-androideabi-4.9'
+-- Check for working C compiler: /mnt/software/adt-bundle-linux-x86_64-20140702/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc
+-- Check for working C compiler: /mnt/software/adt-bundle-linux-x86_64-20140702/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc -- broken
+CMake Error at /usr/local/share/cmake-3.8/Modules/CMakeTestCCompiler.cmake:51 (message):
+  The C compiler
+  "/mnt/software/adt-bundle-linux-x86_64-20140702/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc"
+  is not able to compile a simple test program.
+
+  It fails with the following output:
+
+   Change Dir: /root/桌面/test/build/CMakeFiles/CMakeTmp
+
+
+
+  Run Build Command:"/usr/bin/gmake" "cmTC_abfe8/fast"
+
+  /usr/bin/gmake -f CMakeFiles/cmTC_abfe8.dir/build.make
+  CMakeFiles/cmTC_abfe8.dir/build
+
+  gmake[1]: 进入目录“/root/桌面/test/build/CMakeFiles/CMakeTmp”
+
+  Building C object CMakeFiles/cmTC_abfe8.dir/testCCompiler.c.o
+
+
+  /mnt/software/adt-bundle-linux-x86_64-20140702/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc
+  -target armv7-none-linux-androideabi
+  --sysroot=/mnt/software/adt-bundle-linux-x86_64-20140702/sdk/ndk-bundle/platforms/android-9/arch-arm
+  -isystem
+  /mnt/software/adt-bundle-linux-x86_64-20140702/sdk/ndk-bundle/platforms/android-9/arch-arm/usr/include
+  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong
+  -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16
+  -fno-integrated-as -mthumb -mfpu=neon -Wa,--noexecstack -Wformat
+  -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables
+  -fstack-protector-strong -no-canonical-prefixes -march=armv7-a
+  -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -mfpu=neon
+  -Wa,--noexecstack -Wformat -Werror=format-security -O0
+  -fno-limit-debug-info -o CMakeFiles/cmTC_abfe8.dir/testCCompiler.c.o -c
+  /root/桌面/test/build/CMakeFiles/CMakeTmp/testCCompiler.c
+
+  arm-linux-androideabi-gcc: error: armv7-none-linux-androideabi: No such
+  file or directory
+
+  arm-linux-androideabi-gcc: error: unrecognized command line option
+  '-target'
+
+  arm-linux-androideabi-gcc: error: unrecognized command line option
+  '-fno-integrated-as'
+
+  arm-linux-androideabi-gcc: error: unrecognized command line option
+  '-fno-integrated-as'
+
+  arm-linux-androideabi-gcc: error: unrecognized command line option
+  '-fno-limit-debug-info'
+
+  gmake[1]: *** [CMakeFiles/cmTC_abfe8.dir/testCCompiler.c.o] 错误 1
+
+  gmake[1]: 离开目录“/root/桌面/test/build/CMakeFiles/CMakeTmp”
+
+  gmake: *** [cmTC_abfe8/fast] 错误 2
+
+
+
+
+
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt
+
+
+-- Configuring incomplete, errors occurred!
+See also "/root/桌面/test/build/CMakeFiles/CMakeOutput.log".
+See also "/root/桌面/test/build/CMakeFiles/CMakeError.log".
+[root@localhost build]# cmake -DCMAKE_TOOLCHAIN_FILE=../android.toolchain.cmake -DANDROID_NDK=/mnt/software/adt-bundle-linux-x86_64-20140702/sdk/ndk-bundle -DCMAKE_BUILD_TYPE=Release -DANDROID_ABI="armeabi-v7a with NEON" -DANDROID_STL=gnustl_static ../lib
+-- Android: Selected GCC toolchain 'arm-linux-androideabi-4.9'
+-- Check for working C compiler: /mnt/software/adt-bundle-linux-x86_64-20140702/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc
+-- Check for working C compiler: /mnt/software/adt-bundle-linux-x86_64-20140702/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc -- broken
+CMake Error at /usr/local/share/cmake-3.8/Modules/CMakeTestCCompiler.cmake:51 (message):
+  The C compiler
+  "/mnt/software/adt-bundle-linux-x86_64-20140702/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc"
+  is not able to compile a simple test program.
+
+  It fails with the following output:
+
+   Change Dir: /root/桌面/test/build/CMakeFiles/CMakeTmp
+
+
+
+  Run Build Command:"/usr/bin/gmake" "cmTC_4ecb3/fast"
+
+  /usr/bin/gmake -f CMakeFiles/cmTC_4ecb3.dir/build.make
+  CMakeFiles/cmTC_4ecb3.dir/build
+
+  gmake[1]: 进入目录“/root/桌面/test/build/CMakeFiles/CMakeTmp”
+
+  Building C object CMakeFiles/cmTC_4ecb3.dir/testCCompiler.c.o
+
+
+  /mnt/software/adt-bundle-linux-x86_64-20140702/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc
+  -target armv7-none-linux-androideabi
+  --sysroot=/mnt/software/adt-bundle-linux-x86_64-20140702/sdk/ndk-bundle/platforms/android-9/arch-arm
+  -isystem
+  /mnt/software/adt-bundle-linux-x86_64-20140702/sdk/ndk-bundle/platforms/android-9/arch-arm/usr/include
+  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong
+  -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16
+  -fno-integrated-as -mthumb -mfpu=neon -Wa,--noexecstack -Wformat
+  -Werror=format-security -O0 -fno-limit-debug-info -o
+  CMakeFiles/cmTC_4ecb3.dir/testCCompiler.c.o -c
+  /root/桌面/test/build/CMakeFiles/CMakeTmp/testCCompiler.c
+
+  arm-linux-androideabi-gcc: error: armv7-none-linux-androideabi: No such
+  file or directory
+
+  arm-linux-androideabi-gcc: error: unrecognized command line option
+  '-target'
+
+  arm-linux-androideabi-gcc: error: unrecognized command line option
+  '-fno-integrated-as'
+
+  arm-linux-androideabi-gcc: error: unrecognized command line option
+  '-fno-limit-debug-info'
+
+  gmake[1]: *** [CMakeFiles/cmTC_4ecb3.dir/testCCompiler.c.o] 错误 1
+
+  gmake[1]: 离开目录“/root/桌面/test/build/CMakeFiles/CMakeTmp”
+
+  gmake: *** [cmTC_4ecb3/fast] 错误 2
+
+
+
+
+
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt
+
+
+-- Configuring incomplete, errors occurred!
+See also "/root/桌面/test/build/CMakeFiles/CMakeOutput.log".
+See also "/root/桌面/test/build/CMakeFiles/CMakeError.log".
+[root@localhost build]# cmake -DCMAKE_TOOLCHAIN_FILE=../android.toolchain.cmake -DANDROID_NDK=/mnt/software/adt-bundle-linux-x86_64-20140702/sdk/ndk-bundle -DCMAKE_BUILD_TYPE=Release -DANDROID_ABI="armeabi-v7a with NEON" -DANDROID_STL=none ../lib
+-- Android: Selected GCC toolchain 'arm-linux-androideabi-4.9'
+-- Check for working C compiler: /mnt/software/adt-bundle-linux-x86_64-20140702/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc
+-- Check for working C compiler: /mnt/software/adt-bundle-linux-x86_64-20140702/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc -- broken
+CMake Error at /usr/local/share/cmake-3.8/Modules/CMakeTestCCompiler.cmake:51 (message):
+  The C compiler
+  "/mnt/software/adt-bundle-linux-x86_64-20140702/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc"
+  is not able to compile a simple test program.
+
+  It fails with the following output:
+
+   Change Dir: /root/桌面/test/build/CMakeFiles/CMakeTmp
+
+
+
+  Run Build Command:"/usr/bin/gmake" "cmTC_1fd8c/fast"
+
+  /usr/bin/gmake -f CMakeFiles/cmTC_1fd8c.dir/build.make
+  CMakeFiles/cmTC_1fd8c.dir/build
+
+  gmake[1]: 进入目录“/root/桌面/test/build/CMakeFiles/CMakeTmp”
+
+  Building C object CMakeFiles/cmTC_1fd8c.dir/testCCompiler.c.o
+
+
+  /mnt/software/adt-bundle-linux-x86_64-20140702/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc
+  -target armv7-none-linux-androideabi
+  --sysroot=/mnt/software/adt-bundle-linux-x86_64-20140702/sdk/ndk-bundle/platforms/android-9/arch-arm
+  -isystem
+  /mnt/software/adt-bundle-linux-x86_64-20140702/sdk/ndk-bundle/platforms/android-9/arch-arm/usr/include
+  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong
+  -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16
+  -fno-integrated-as -mthumb -mfpu=neon -Wa,--noexecstack -Wformat
+  -Werror=format-security -O0 -fno-limit-debug-info -o
+  CMakeFiles/cmTC_1fd8c.dir/testCCompiler.c.o -c
+  /root/桌面/test/build/CMakeFiles/CMakeTmp/testCCompiler.c
+
+  arm-linux-androideabi-gcc: error: armv7-none-linux-androideabi: No such
+  file or directory
+
+  arm-linux-androideabi-gcc: error: unrecognized command line option
+  '-target'
+
+  arm-linux-androideabi-gcc: error: unrecognized command line option
+  '-fno-integrated-as'
+
+  arm-linux-androideabi-gcc: error: unrecognized command line option
+  '-fno-limit-debug-info'
+
+  gmake[1]: *** [CMakeFiles/cmTC_1fd8c.dir/testCCompiler.c.o] 错误 1
+
+  gmake[1]: 离开目录“/root/桌面/test/build/CMakeFiles/CMakeTmp”
+
+  gmake: *** [cmTC_1fd8c/fast] 错误 2
+
+
+
+
+
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt
+
+
+-- Configuring incomplete, errors occurred!
+See also "/root/桌面/test/build/CMakeFiles/CMakeOutput.log".
+See also "/root/桌面/test/build/CMakeFiles/CMakeError.log".
+[root@localhost build]# ^C
+[root@localhost build]# ^C
+[root@localhost build]# cmake -DCMAKE_TOOLCHAIN_FILE=../android.toolchain.cmake -DANDROID_TOOLCHAIN_NAME=arm-linux-androideabi-4.9  -DANDROID_NDK=/mnt/software/adt-bundle-linux-x86_64-20140702/sdk/ndk-bundle -DCMAKE_BUILD_TYPE=Release -DANDROID_ABI="armeabi-v7a with NEON"  ../lib
+-- Android: Selected GCC toolchain 'arm-linux-androideabi-4.9'
+-- The C compiler identification is GNU 4.9.0
+-- The CXX compiler identification is GNU 4.9.0
+-- Check for working C compiler: /mnt/software/adt-bundle-linux-x86_64-20140702/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc
+-- Check for working C compiler: /mnt/software/adt-bundle-linux-x86_64-20140702/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /mnt/software/adt-bundle-linux-x86_64-20140702/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++
+-- Check for working CXX compiler: /mnt/software/adt-bundle-linux-x86_64-20140702/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /root/桌面/test/build
+[root@localhost build]# cmake --build .
+Scanning dependencies of target cmake
+[ 50%] Building CXX object CMakeFiles/cmake.dir/hello.cpp.o
+/root/桌面/test/lib/hello.cpp:5:20: fatal error: printf.h: No such file or directory
+ #include <printf.h>
+                    ^
+compilation terminated.
+gmake[2]: *** [CMakeFiles/cmake.dir/hello.cpp.o] 错误 1
+gmake[1]: *** [CMakeFiles/cmake.dir/all] 错误 2
+gmake: *** [all] 错误 2
