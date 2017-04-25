@@ -1,3 +1,7 @@
+MyApplication 是Android stduio的项目
+另外一个是clion的C++项目
+
+
 1.编译指令：cmake -DCMAKE_TOOLCHAIN_FILE=../android.toolchain.cmake -DANDROID_TOOLCHAIN_NAME=arm-linux-androideabi-4.9 -DANDROID_STL=system  -DANDROID_NDK=/mnt/software/adt-bundle-linux-x86_64-20140702/sdk/ndk-bundle -DCMAKE_BUILD_TYPE=Release -DANDROID_ABI="armeabi-v7a with NEON"  ../lib
 2.编译完毕之后，使用make指令去编译出so的动态库
 
